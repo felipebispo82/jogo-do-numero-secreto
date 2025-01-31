@@ -30,6 +30,7 @@ function verificarChute() {
         let mensagemtentativas = `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`;
         document.getElementById('reiniciar').disabled = false; //Habilida o botão de reiniciar o jogo
         document.getElementById('botaochute').disabled = true; //Desabilita o botão de tentativas
+        document.querySelector('input').disabled = true; //Desabilita entrada de tentativa
         exibirTextoNaTela('p', mensagemtentativas);
     }
         else {
@@ -69,6 +70,7 @@ function resetJogo(){
     numeroSecreto = gerarRNG();
     document.getElementById('reiniciar').disabled = true; //Desabilita o botão de reiniciar o jogo
     document.getElementById('botaochute').disabled = false; //Habilita o botão de tentativas
+    document.querySelector('input').disabled = false; //Desabilita entrada de tentativa
     console.log(numeroSecreto);
     exibirMsgInicial();
     limpaCampo();
